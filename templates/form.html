@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Analysis Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            background-color: #2c2c2c;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 1000px;
+            height: 90vh;
+            overflow-y: auto;
+            color: #e0e0e0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #e0e0e0;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .form-group label {
+            flex: 1;
+            margin-bottom: 5px;
+            color: #e0e0e0;
+            font-weight: bold;
+            min-width: 200px;
+        }
+
+        .form-group input,
+        .form-group select {
+            flex: 2;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #444444;
+            font-size: 14px;
+            min-width: 150px;
+            background-color: #333333;
+            color: #e0e0e0;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Customer Analysis Form</h1>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="Year_Birth">Year of Birth:</label>
+                <input type="number" id="Year_Birth" name="Year_Birth" step="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Income">Income:</label>
+                <input type="number" id="Income" name="Income" step="0.01" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Kidhome">Number of Kids at Home:</label>
+                <input type="number" id="Kidhome" name="Kidhome" step="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Teenhome">Number of Teens at Home:</label>
+                <input type="number" id="Teenhome" name="Teenhome" step="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Recency">Recency (in days since last purchase):</label>
+                <input type="number" id="Recency" name="Recency" step="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="MntWines">Amount Spent on Wine:</label>
+                <input type="number" id="MntWines" name="MntWines" step="0.01" required>
+            </div>
+
+            <div class="form-group">
+                <label for="MntFruits">Amount Spent on Fruits:</label>
+                <input type="number" id="MntFruits" name="MntFruits" step="0.01" required>
+            </div>
+
+            <div class="form-group">
+                <label for="MntMeatProducts">Amount Spent on Meat Products:</label>
+                <input type="number" id="MntMeatProducts" name="MntMeatProducts" step="0.01" required>
+            </div>
+
+            <div class="form-group">
+                <label for="MntFishProducts">Amount Spent on Fish Products:</label>
+                <input type="number" id="MntFishProducts" name="MntFishProducts" step="0.01" required>
+            </div>
+
+            <div class="form-group">
+                <label for="MntSweetProducts">Amount Spent on Sweet Products:</label>
+                <input type="number" id="MntSweetProducts" name="MntSweetProducts" step="0.01" required>
+            </div>
+
+            <div class="form-group">
+                <label for="MntGoldProds">Amount Spent on Gold Products:</label>
+                <input type="number" id="MntGoldProds" name="MntGoldProds" step="0.01" required>
+            </div>
+
+            <div class="form-group">
+                <label for="NumDealsPurchases">Number of Deals Purchases:</label>
+                <input type="number" id="NumDealsPurchases" name="NumDealsPurchases" step="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="NumWebPurchases">Number of Web Purchases:</label>
+                <input type="number" id="NumWebPurchases" name="NumWebPurchases" step="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="NumCatalogPurchases">Number of Catalog Purchases:</label>
+                <input type="number" id="NumCatalogPurchases" name="NumCatalogPurchases" step="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="NumStorePurchases">Number of Store Purchases:</label>
+                <input type="number" id="NumStorePurchases" name="NumStorePurchases" step="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="NumWebVisitsMonth">Number of Web Visits per Month:</label>
+                <input type="number" id="NumWebVisitsMonth" name="NumWebVisitsMonth" step="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="AcceptedCmp3">Accepted Campaign 3:</label>
+                <input type="number" id="AcceptedCmp3" name="AcceptedCmp3" step="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="AcceptedCmp4">Accepted Campaign 4:</label>
+                <input type="number" id="AcceptedCmp4" name="AcceptedCmp4" step="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="AcceptedCmp5">Accepted Campaign 5:</label>
+                <input type="number" id="AcceptedCmp5" name="AcceptedCmp5" step="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="AcceptedCmp1">Accepted Campaign 1:</label>
+                <input type="number" id="AcceptedCmp1" name="AcceptedCmp1" step="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="AcceptedCmp2">Accepted Campaign 2:</label>
+                <input type="number" id="AcceptedCmp2" name="AcceptedCmp2" step="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Complain">Complaint:</label>
+                <input type="number" id="Complain" name="Complain" step="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Z_CostContact">Cost Contact:</label>
+                <input type="number" id="Z_CostContact" name="Z_CostContact" step="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Z_Revenue">Revenue:</label>
+                <input type="number" id="Z_Revenue" name="Z_Revenue" step="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Education">Education:</label>
+                <select id="Education" name="Education" required>
+                    <option value="Basic">Basic</option>
+                    <option value="2n Cycle">2nd Cycle</option>
+                    <option value="Graduation">Graduation</option>
+                    <option value="Master">Master</option>
+                    <option value="PhD">PhD</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Marital_Status">Marital Status:</label>
+                <select id="Marital_Status" name="Marital_Status" required>
+                    <option value="Single">Single</option>
+                    <option value="Together">Together</option>
+                    <option value="Married">Married</option>
+                    <option value="Divorced">Divorced</option>
+                    <option value="Widow">Widow</option>
+                    <option value="Alone">Alone</option>
+                    <option value="Absurd">Absurd</option>
+                    <option value="YOLO">YOLO</option>
+                </select>
+            </div>
+
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
